@@ -1,0 +1,86 @@
+BASIC CLI SETUP
+
+1. CREATE THIS SCRIPT
+
+#!/usr/bin/env node
+import { execSync } from "child_process";
+import inquirer from "inquirer";
+import chalk from "chalk";
+import fs from "fs";
+
+console.log(chalk.blue("\nNext.js Template Installer\n"));
+
+async function main() {
+  const { projectName } = await inquirer.prompt([
+    {
+      type: "input",
+      name: "projectName",
+      message: "Enter your project name:",
+      default: "my-next-app",
+    },
+  ]);
+
+  console.log(chalk.green(`\nCreating project: ${projectName}\n`));
+
+  // Clone template
+  execSync(`npx degit your-github-username/your-template ${projectName}`, {
+    stdio: "inherit",
+  });
+
+  // Change directory
+  process.chdir(projectName);
+
+  // Ask for package manager
+  const { packageManager } = await inquirer.prompt([
+    {
+      type: "list",
+      name: "packageManager",
+      message: "Choose a package manager:",
+      choices: ["pnpm", "npm", "yarn", "bun"],
+      default: "pnpm",
+    },
+  ]);
+
+  // Install dependencies
+  console.log(
+    chalk.green(`\nInstalling dependencies with ${packageManager}...\n`)
+  );
+  execSync(`${packageManager} install`, { stdio: "inherit" });
+
+  console.log(chalk.blue("\nAll set! Run your project:\n"));
+  console.log(chalk.green(`cd ${projectName} && ${packageManager} dev\n`));
+}
+
+main();
+
+---------------------------------------------------------------
+
+2. ADD TO PACKAGE.JSON
+
+{
+  "bin": {
+    "create-my-next-app": "./cli.js"
+  }
+}
+
+---------------------------------------------------------------
+
+3. MAKE CLI.JS EXECUTABLE
+
+chmod +x cli.js
+
+---------------------------------------------------------------
+
+4. PUBLISH AS NPM PACKAGE
+
+npm login
+
+npm init -y
+
+npm publish --access public
+
+---------------------------------------------------------------
+
+5. TRY IT OUT
+
+npx create-my-next-app
