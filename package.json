@@ -1,19 +1,38 @@
 {
-  "name": "egxo-starter",
+  "name": "xo-starter",
   "version": "1.0.0",
+  "description": "An easy-to-deploy Next.js 15 starter template!",
+  "homepage": "https://egxo-starter.vercel.app",
+  "author": "Ethan G. (https://egxo.dev)",
   "private": true,
+  "keywords": [
+    "typesctipt",
+    "javascript",
+    "nextjs",
+    "next15",
+    "react",
+    "react19",
+    "tailwindcss",
+    "tailwindv4",
+    "shadcnui",
+    "eslint",
+    "vercel"
+  ],
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.476.0",
+    "motion": "^12.0.5",
     "next": "latest",
-    "next-themes": "latest",
+    "next-themes": "^0.4.4",
     "react": "latest",
     "react-dom": "latest",
     "tailwind-merge": "^3.0.2",
@@ -21,13 +40,13 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "latest",
-    "@tailwindcss/postcss": "latest",
+    "@tailwindcss/postcss": "^4.0.9",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
-    "tailwindcss": "latest",
+    "tailwindcss": "^4.0.9",
     "typescript": "latest"
   }
 }
