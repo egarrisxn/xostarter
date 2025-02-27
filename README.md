@@ -2,6 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![GitHub repo size](https://img.shields.io/github/repo-size/egarrisxn/egxo-starter) ![GitHub last commit](https://img.shields.io/github/last-commit/egarrisxn/egxo-starter)
 
+![opengraph-image](https://github.com/user-attachments/assets/a49fec98-b71b-4f67-8dbd-9c77156effb0)
+
 ## Overview
 
 This is a [Next.js](https://nextjs.org) starter template created by [Ethan G.](https://egxo.dev).
