@@ -1,10 +1,12 @@
+import { siteConfig } from "@/utils/config";
+
 import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "XO Starter",
+    name: siteConfig.title,
     short_name: "XO",
-    description: "An easy-to-deploy Next.js 15 starter template!",
+    description: siteConfig.description,
 
     icons: [
       {

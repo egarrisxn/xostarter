@@ -1,14 +1,14 @@
-# XO Starter
+# **XO Starter**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![GitHub repo size](https://img.shields.io/github/repo-size/egarrisxn/xostarter) ![GitHub last commit](https://img.shields.io/github/last-commit/egarrisxn/xostarter)
 
 ![opengraph-image](https://github.com/user-attachments/assets/a49fec98-b71b-4f67-8dbd-9c77156effb0)
 
-## Overview
+## **Overview**
 
 This is an easy-to-deploy [Next.js](https://nextjs.org) starter template created by [Ethan G.](https://egxo.dev). It is designed to streamline development with modern tools, ensuring a fast and efficient workflow from setup to deployment.
 
-## Technologies
+## **Technologies**
 
 This template leverages a modern tech stack for a smooth developer experience:
 
@@ -24,7 +24,7 @@ This template leverages a modern tech stack for a smooth developer experience:
 - **Icons**: [lucide-react](https://lucide.dev/) – Crisp, open-source React icons.
 - **More**: TBD (Feel free to extend and customize based on your needs).
 
-## Before You Begin
+## **Before You Begin**
 
 This template uses [pnpm](https://pnpm.io) as the default package manager for faster dependency resolution and disk space efficiency. However, you can switch to `npm`, `yarn`, or `bun` if preferred.
 
@@ -51,7 +51,7 @@ npm install  # or yarn install, bun install
 
 Now you're ready to start building! 🚀
 
-## Getting Started
+## **Getting Started**
 
 #### 1. Clone the Template
 
@@ -84,21 +84,11 @@ Once the server is running, open [http://localhost:3000](http://localhost:3000) 
 
 You can start editing the page by modifying `app/page.tsx`. TThe page will auto-update as you edit the file. Now, get to building! 🚀
 
-## Configuration
+## **Configuration**
 
 Easily customize your project by updating `utils/config.ts`. This file centralizes important settings, allowing for quick adjustments without modifying multiple files.
 
-## Fonts
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) for optimized font loading. By default, it includes [Geist](https://vercel.com/font), a modern typeface by Vercel.
-
-You can easily swap out the font for another one. I recommend using `next/font` for built-in optimization or self-hosting fonts for better performance. Be mindful of font file sizes if sourcing them locally.
-
-## Favicon
-
-For generating favicons, icons, and a `manifest.json`, I recommend using [Real Favicon Generator](https://realfavicongenerator.net). This tool ensures proper cross-browser compatibility.
-
-## Styling
+## **Styling**
 
 This project utilizes [shadcn/ui](https://ui.shadcn.com/) alongside [Tailwind CSS v4](https://tailwindcss.com/blog/tailwindcss-v4).
 
@@ -108,7 +98,7 @@ Since Tailwind v4 is still new (as of 2/27), we are using the canary version of 
 pnpm dlx shadcn@canary add [component]
 ```
 
-### Updating UI Theme
+### Updating UI
 
 To customize the base UI colors, you'll need to reconfigure your CSS variables. Run:
 
@@ -116,13 +106,38 @@ To customize the base UI colors, you'll need to reconfigure your CSS variables. 
 pnpm dlx shadcn@canary init
 ```
 
-## Analytics
+## **Fonts**
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) for optimized font loading. By default, it includes [Geist](https://vercel.com/font), a modern typeface by Vercel.
+
+You can easily swap out the font for another one. I recommend using `next/font` for built-in optimization or self-hosting fonts for better performance. Be mindful of font file sizes if sourcing them locally.
+
+## **Metadata**
+
+Since we are using the app router in **Next.js 15**, many metadata-related assets no longer need to be manually defined in the `<Head>` of your layout. Instead, Next.js automatically picks them up when they are placed in the `app` folder.
+
+For example, the following files are already recognized by Next.js:
+
+- **OpenGraph & Twitter images**: `opengraph-image.png` & `twitter-image.png` + alt. txt files.
+- **Icons**: `favicon.ico`, `apple-icon.png`, `icon.svg`, & `icon.png`.
+- **Manifest**: `manifest.ts`, `manifest.json`, `manifest.webmanifest`, OR `site.webmanifest`.
+- **SEO & Crawler files**: `robots.ts` OR `robots.txt` & `sitemap.ts` OR `sitemap.xml`.
+
+Because of this, metadata properties like `robots`, `icons`, `manifest`, and OpenGraph/Twitter images are **commented out** in `layout.tsx`. They are left in the code for reference, but they are not necessary unless you want to override the default behavior.
+
+If you need to customize metadata on a **per-page basis**, you can still define it manually inside a `metadata` object in the corresponding page or layout file. Otherwise, Next.js will handle it automatically.
+
+### Quick Note
+
+For generating favicons, icons, and a `manifest.json`, I **highly** recommend visiting [Real Favicon Generator](https://realfavicongenerator.net) and using their open-sourced tools.
+
+## **Analytics**
 
 This template includes [Vercel Analytics](https://vercel.com/docs/analytics) for basic site tracking. After deployment, you can enable analytics through your Vercel dashboard.
 
 If you prefer another analytics solution or are deploying elsewhere, simply uninstall the package and remove the import from `layout.tsx`.
 
-## Deployment
+## **Deployment**
 
 For a seamless deployment experience, use the **Deploy** button below to launch your project on Vercel.
 
@@ -130,17 +145,17 @@ Note: You are not limited to Vercel and may deploy this template on any platform
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fegarrisxn%2Fxostarter)
 
-## Learn More
+## **Learn More**
 
 To explore more about Next.js, check out these resources:
 
 - 📖 [Next.js Documentation](https://nextjs.org/docs) – Official docs covering features and best practices.
 - 🛠️ [Next.js GitHub](https://github.com/vercel/next.js) – Browse the source code and contribute.
 
-## License
+## **License**
 
 This project is licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-## Contact
+## **Contact**
 
 If you have any questions or need further assistance, feel free to reach out to me at [github.com/garrisxn](https://github.com/egarrisxn) or send an email to [egarrisxn@gmail.com](mailto:egarrisxn@gmail.com) and I'll get back to you as soon as possible!

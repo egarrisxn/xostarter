@@ -1,4 +1,4 @@
-/* Instead of using the tailwind typography package, we will use css directly. */
+/* Instead of using the tailwind typography package, we will use this typography css instead. */
 
 .prose {
   --prose-color: var(--color-gray-700);

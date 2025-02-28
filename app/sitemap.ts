@@ -1,50 +1,24 @@
-import { siteUrl } from "@/utils/env";
+import { siteConfig } from "@/utils/config";
 
-type SitemapEntry = {
-  url: string;
-  lastModified: string;
-  changeFrequency:
-    | "always"
-    | "hourly"
-    | "daily"
-    | "weekly"
-    | "monthly"
-    | "yearly"
-    | "never";
-  priority?: number;
-};
+import type { SitemapEntry } from "@/utils/types";
 
 export default async function sitemap(): Promise<SitemapEntry[]> {
   const staticPages: SitemapEntry[] = [
     {
-      url: siteUrl,
+      url: siteConfig.url,
       lastModified: new Date().toISOString(),
-      changeFrequency: "weekly",
+      changeFrequency: "monthly",
       priority: 1,
     },
 
-    //-----------------------------------
-    // EXAMPLES OF A FEW MORE STATIC PAGES
-    //-----------------------------------
+    //---EXAMPLE OF ANOTHER SITEMAP PAGE---//
 
     // {
-    //   url: `${siteUrl}/about`,
+    //   url: `${siteConfig.url}/blog`,
     //   lastModified: new Date().toISOString(),
-    //   changeFrequency: "monthly",
-    //   priority: 0.6,
-    // },
-    // {
-    //   url: `${siteUrl}/blog`,
-    //   lastModified: new Date().toISOString(),
-    //   changeFrequency: "daily",
+    //   changeFrequency: "weekly",
     //   priority: 0.8,
-    // },
-    // {
-    //   url: `${siteUrl}/contact`,
-    //   lastModified: new Date().toISOString(),
-    //   changeFrequency: "yearly",
-    //   priority: 0.4,
-    // },
+    // }
   ];
 
   return [...staticPages];
