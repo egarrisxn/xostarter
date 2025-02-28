@@ -18,7 +18,7 @@ export default function NotFound() {
                 404
               </h1>
               <h2 className="mt-2 text-gray-700 sm:mt-0 dark:text-gray-400">
-                Page not be found. Let's get you {""}{" "}
+                Page not be found. Let&apos;s get you {""}
                 <Link
                   href="/"
                   className="text-blue-500 underline underline-offset-2"
