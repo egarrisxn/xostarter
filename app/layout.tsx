@@ -1,10 +1,12 @@
-import "./globals.css";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
-import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/utils/config";
-
-import type { Viewport, Metadata } from "next";
+import { ThemeProvider } from "@/components/providers";
+import Navbar from "@/components/navbar";
+import { Toaster } from "@/components/ui/sonner";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,35 +17,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-        <Analytics />
-      </body>
-    </html>
-  );
-}
-
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#020618" },
-  ],
-};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -115,8 +88,39 @@ export const metadata: Metadata = {
   //   icon: [
   //     { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
   //     { url: "/icon.png", sizes: "96x96", type: "image/png" },
-  //     { url: "/icon.svg", type: "image/svg+xml" },
+  //     { url: "/icon.svg", sizes: "any", type: "image/svg+xml" },
   //   ],
   //   apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   // },
 };
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#020618" },
+  ],
+};
+
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html suppressHydrationWarning lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} max-w-screen overflow-x-hidden font-sans antialiased`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main className="grid min-h-dvh w-full grid-cols-1 justify-center">{children}</main>
+          <Toaster />
+        </ThemeProvider>
+        <Analytics />
+      </body>
+    </html>
+  );
+}

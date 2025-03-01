@@ -1,3 +1,5 @@
+README.MD
+CHANGELOG.md
 pnpm-lock.yaml
 node_modules
 coverage
@@ -8,6 +10,7 @@ out
 *.lock
 *.log
 .git
-.github
-.vercel
 .next
+.vscode
+.vercel
+.github

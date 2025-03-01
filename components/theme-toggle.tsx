@@ -1,38 +1,40 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { Moon, Sun } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Computer, Sun, Moon } from "lucide-react";
+import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
 
 export default function ThemeToggle() {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
-          <Sun className="size-5 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-          <Moon className="absolute size-5 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" sideOffset={5}>
-        <DropdownMenuRadioGroup
-          value={theme}
-          onValueChange={(value) => setTheme(value)}
-        >
-          <DropdownMenuRadioItem value="light">Light</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="dark">Dark</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="system">System</DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <ToggleGroup
+      variant="outline"
+      type="single"
+      size="sm"
+      className="*:data-[slot=toggle-group-item]:w-22"
+      value={theme || resolvedTheme}
+      onValueChange={(value) => value && setTheme(value)}
+    >
+      <ToggleGroupItem value="system" aria-label="Toggle system theme" className="text-xs">
+        <Computer className="size-3.5" /> System
+      </ToggleGroupItem>
+      <ToggleGroupItem value="light" aria-label="Toggle light theme" className="text-xs">
+        <Sun className="size-3.5" /> Light
+      </ToggleGroupItem>
+      <ToggleGroupItem value="dark" aria-label="Toggle dark theme" className="text-xs">
+        <Moon className="size-3.5" /> Dark
+      </ToggleGroupItem>
+    </ToggleGroup>
   );
 }

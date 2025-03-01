@@ -1,13 +1,14 @@
-import { siteConfig } from "@/utils/config";
-
 import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: siteConfig.title,
+    name: "XO Starter",
     short_name: "XO",
-    description: siteConfig.description,
-
+    description: "An easy-to-deploy Next.js 15 starter template!",
+    start_url: "/",
+    display: "standalone",
+    background_color: "#000000",
+    theme_color: "#000000",
     icons: [
       {
         src: "/web-app-manifest-192x192.png",
@@ -22,9 +23,5 @@ export default function manifest(): MetadataRoute.Manifest {
         purpose: "maskable",
       },
     ],
-    theme_color: "#000000",
-    background_color: "#000000",
-    display: "standalone",
-    start_url: "/",
   };
 }
