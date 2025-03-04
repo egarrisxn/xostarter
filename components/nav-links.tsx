@@ -6,14 +6,15 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/test", label: "Test" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function NavLinks() {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-2 sm:gap-2.5 lg:gap-3 xl:gap-4">
       {navLinks.map((link) => {
         const active = link.href === "/" ? pathname === link.href : pathname.includes(link.href);
 

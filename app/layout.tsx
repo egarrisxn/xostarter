@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/providers";
 import Navbar from "@/components/navbar";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
+import Footer from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -106,9 +107,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} max-w-screen overflow-x-hidden font-sans antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} `}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -116,7 +115,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="grid min-h-dvh w-full grid-cols-1 justify-center">{children}</main>
+          <main>{children}</main>
+          <Footer />
           <Toaster />
         </ThemeProvider>
         <Analytics />
