@@ -13,18 +13,9 @@ export type SiteConfig = {
   };
 };
 
-//---USE WHEN CREATING DYNAMIC SITEMAP---//
-
-// export type SitemapEntry = {
-//   url: string;
-//   lastModified: string;
-//   changeFrequency:
-//     | "always"
-//     | "hourly"
-//     | "daily"
-//     | "weekly"
-//     | "monthly"
-//     | "yearly"
-//     | "never";
-//   priority?: number;
-// };
+export type SitemapEntry = {
+  url: string;
+  lastModified: string;
+  changeFrequency: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
+  priority?: number;
+};

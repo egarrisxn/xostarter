@@ -1,13 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { siteConfig } from "@/utils/config";
 import { ThemeProvider } from "@/components/providers";
 import Navbar from "@/components/navbar";
-import { Toaster } from "@/components/ui/sonner";
-import "./globals.css";
 import Footer from "@/components/footer";
+import { Toaster as SonnerToaster } from "sonner";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,23 +41,6 @@ export const metadata: Metadata = {
     "eslint",
     "vercel",
   ],
-  appleWebApp: {
-    capable: true,
-    title: siteConfig.title,
-    startupImage: siteConfig.ogImage,
-    statusBarStyle: "black-translucent",
-  },
-  formatDetection: {
-    telephone: true,
-    date: true,
-    address: true,
-    email: true,
-    url: true,
-  },
-  appLinks: {},
-
-  //---SEE README FOR INFO OVER COMMENTED OUT METADATA---//
-
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
@@ -76,6 +58,24 @@ export const metadata: Metadata = {
     site: siteConfig.socialHandle,
     // images: [siteConfig.ogImage],
   },
+  appleWebApp: {
+    capable: true,
+    title: siteConfig.title,
+    startupImage: siteConfig.ogImage,
+    statusBarStyle: "black-translucent",
+  },
+  formatDetection: {
+    telephone: true,
+    date: true,
+    address: true,
+    email: true,
+    url: true,
+  },
+  verification: {},
+  appLinks: {},
+
+  //---SEE README FOR INFO OVER COMMENTED OUT METADATA---//
+
   // manifest: "/manifest.json",
   // robots: {
   //   index: true,
@@ -104,7 +104,7 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html suppressHydrationWarning lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} `}>
@@ -117,7 +117,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Navbar />
           <main>{children}</main>
           <Footer />
-          <Toaster />
+          <SonnerToaster richColors closeButton position="bottom-right" />
         </ThemeProvider>
         <Analytics />
       </body>

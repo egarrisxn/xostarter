@@ -4,7 +4,12 @@ export default function GitHubIcon() {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <a href="https://github.com/egarrisxn/xostarter" className="group">
+        <a
+          href="https://github.com/egarrisxn/xostarter"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="group"
+        >
           <div className="border-foreground/80 rounded-full border-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"

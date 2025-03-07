@@ -12,7 +12,9 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} XO Starter by{" "}
           <a
             href="https://egxo.dev"
-            className="font-medium text-[#17c9e0] underline-offset-2 hover:text-[#17c8e0da] hover:underline"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="font-medium text-[#17c9e0] underline-offset-4 hover:text-[#17c8e0da] hover:underline"
           >
             egxo.dev
           </a>
