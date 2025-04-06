@@ -82,7 +82,7 @@ pnpm dev
 
 Once the server is running, open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. TThe page will auto-update as you edit the file. Now, get to building! 🚀
+You can start editing the page by modifying `app/page.tsx`. The page will auto-update as you edit the file. Now, get to building! 🚀
 
 ## **Configuration**
 
