@@ -98,7 +98,7 @@ export default function Features() {
                 <div
                   className={cn(
                     "mb-4 flex size-12 items-center justify-center rounded-lg",
-                    "bg-gradient-to-br text-white"
+                    "text-foreground bg-gradient-to-br"
                   )}
                   style={
                     {
