@@ -91,10 +91,10 @@ Easily customize your project by updating `utils/config.ts`. This file centraliz
 
 This project utilizes [shadcn/ui](https://ui.shadcn.com/) alongside [Tailwind CSS v4](https://tailwindcss.com/blog/tailwindcss-v4).
 
-Since Tailwind v4 is still new (as of 2/27), we are using the canary version of the `shadcn/ui` CLI to add components. To install a UI component, run the following command, replacing `[component]` with the actual component name:
+We will use the `shadcn/ui` CLI to add components. To install a UI component, run the following command, replacing `[component]` with the actual component name:
 
 ```bash
-pnpm dlx shadcn@canary add [component]
+pnpm dlx shadcn@latest add [component]
 ```
 
 ### Updating UI
@@ -102,7 +102,7 @@ pnpm dlx shadcn@canary add [component]
 To customize the base UI colors, you'll need to reconfigure your CSS variables. Run:
 
 ```bash
-pnpm dlx shadcn@canary init
+pnpm dlx shadcn@latest init
 ```
 
 ## **Fonts**

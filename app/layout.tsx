@@ -1,12 +1,12 @@
+import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-import { siteConfig } from "@/utils/config";
-import { ThemeProvider } from "@/components/providers";
+import { SITE_DATA } from "@/lib/config";
+import { ThemeProvider } from "@/providers";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { Toaster as SonnerToaster } from "sonner";
-import "./globals.css";
+import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,64 +18,35 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+//! SEE README FOR INFO ON COMMENTED OUT METADATA !//
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: new URL(SITE_DATA.url),
   title: {
-    default: siteConfig.title,
-    template: `%s | ${siteConfig.title}`,
+    default: SITE_DATA.title,
+    template: `%s | ${SITE_DATA.title}`,
   },
-  description: siteConfig.description,
-  applicationName: siteConfig.title,
+  description: SITE_DATA.description,
+  applicationName: SITE_DATA.title,
   referrer: "origin-when-cross-origin",
-  creator: siteConfig.links.website,
+  creator: SITE_DATA.links.website,
   keywords: [
     "typescript",
     "javascript",
+    "next",
     "nextjs",
     "next15",
     "react",
+    "reactjs",
     "react19",
-    "tailwindCSS",
-    "tailwindv4",
+    "tailwind",
+    "tailwindcss",
+    "tailwindcssv4",
     "shadcnui",
+    "radixui",
     "eslint",
+    "prettier",
     "vercel",
   ],
-  openGraph: {
-    title: siteConfig.title,
-    description: siteConfig.description,
-    url: siteConfig.url,
-    siteName: siteConfig.title,
-    type: "website",
-    locale: "en_US",
-    // images: [siteConfig.ogImage],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.title,
-    description: siteConfig.description,
-    creator: siteConfig.socialHandle,
-    site: siteConfig.socialHandle,
-    // images: [siteConfig.ogImage],
-  },
-  appleWebApp: {
-    capable: true,
-    title: siteConfig.title,
-    startupImage: siteConfig.ogImage,
-    statusBarStyle: "black-translucent",
-  },
-  formatDetection: {
-    telephone: true,
-    date: true,
-    address: true,
-    email: true,
-    url: true,
-  },
-  verification: {},
-  appLinks: {},
-
-  //---SEE README FOR INFO OVER COMMENTED OUT METADATA---//
-
   // manifest: "/manifest.json",
   // robots: {
   //   index: true,
@@ -85,14 +56,32 @@ export const metadata: Metadata = {
   //     follow: true,
   //   },
   // },
+  openGraph: {
+    title: SITE_DATA.title,
+    description: SITE_DATA.description,
+    url: SITE_DATA.url,
+    siteName: SITE_DATA.title,
+    type: "website",
+    locale: "en_US",
+    // images: [SITE_DATA.ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_DATA.title,
+    description: SITE_DATA.description,
+    creator: SITE_DATA.socialHandle,
+    site: SITE_DATA.socialHandle,
+    // images: [SITE_DATA.ogImage],
+  },
   // icons: {
   //   icon: [
   //     { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
-  //     { url: "/icon.png", sizes: "96x96", type: "image/png" },
-  //     { url: "/icon.svg", sizes: "any", type: "image/svg+xml" },
+  //     { url: "/icon0.png", sizes: "96x96", type: "image/png" },
+  //     { url: "/icon1.svg", sizes: "any", type: "image/svg+xml" },
   //   ],
   //   apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   // },
+  // verification: {},
 };
 
 export const viewport: Viewport = {
@@ -100,24 +89,30 @@ export const viewport: Viewport = {
   initialScale: 1,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#020618" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
   ],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html suppressHydrationWarning lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} `}>
+    <html suppressHydrationWarning lang='en'>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} grid min-h-[100dvh] w-full max-w-screen grid-rows-[auto_1fr_auto] overflow-x-hidden font-sans antialiased`}
+      >
         <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
+          attribute='class'
+          defaultTheme='system'
           enableSystem
           disableTransitionOnChange
         >
           <Navbar />
-          <main>{children}</main>
+          <main className='grid'>{children}</main>
           <Footer />
-          <SonnerToaster richColors closeButton position="bottom-right" />
+          <SonnerToaster richColors closeButton position='bottom-right' />
         </ThemeProvider>
         <Analytics />
       </body>

@@ -1,26 +1,112 @@
-import ThemeToggle from "./theme-toggle";
-import GitHubIcon from "./github-icon";
+import Link from "next/link";
+import { GitHubIcon, XIcon, LinkedInIcon } from "./icons";
+
+const socialLinks = [
+  { href: "https://github.com", Icon: GitHubIcon, label: "GitHub" },
+  { href: "https://x.com", Icon: XIcon, label: "X" },
+  { href: "https://linkedin.com", Icon: LinkedInIcon, label: "LinkedIn" },
+];
+
+const SocialLink = ({
+  href,
+  Icon,
+  label,
+}: {
+  href: string;
+  Icon: React.ElementType;
+  label: string;
+}) => (
+  <Link
+    href={href}
+    className='text-muted-foreground hover:text-foreground transition-colors'
+    aria-label={label}
+  >
+    <Icon className='size-5' />
+    <span className='sr-only'>{label}</span>
+  </Link>
+);
+
+const footerSections = [
+  {
+    title: "Resources",
+    links: [
+      { label: "API Reference", href: "#" },
+      { label: "Guides", href: "#" },
+      { label: "Examples", href: "#" },
+    ],
+  },
+  {
+    title: "Community",
+    links: [
+      { label: "Discord", href: "#" },
+      { label: "Slack", href: "#" },
+      { label: "BlueSky", href: "#" },
+      { label: "Contributing", href: "#" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Privacy Policy", href: "#" },
+      { label: "Terms of Service", href: "#" },
+      { label: "License", href: "#" },
+    ],
+  },
+];
+
+const FooterSection = ({
+  title,
+  links,
+}: {
+  title: string;
+  links: { label: string; href: string }[];
+}) => (
+  <div>
+    <h3 className='mb-3 text-lg font-semibold'>{title}</h3>
+    <ul className='space-y-2'>
+      {links.map(({ label, href }) => (
+        <li key={label}>
+          <Link
+            href={href}
+            className='text-muted-foreground hover:text-foreground text-sm transition-colors'
+          >
+            {label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
 export default function Footer() {
   return (
-    <footer className="border-foreground/5 w-full border-t">
-      <div className="container mx-auto flex flex-col items-center justify-center gap-4 px-6 pt-8 pb-6 text-center md:flex-row md:justify-between md:p-6">
-        <div className="sm:hidden">
-          <ThemeToggle />
+    <footer className='border-t'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4'>
+          <div>
+            <h3 className='mb-3 text-lg font-semibold'>XOStarter</h3>
+            <p className='text-muted-foreground max-w-56 text-sm'>
+              A modern, feature-rich starter template for Next.js 15 with React
+              19, Tailwind 4, and more.
+            </p>
+            <div className='mt-4 flex gap-4'>
+              {socialLinks.map(({ href, Icon, label }) => (
+                <SocialLink key={label} href={href} Icon={Icon} label={label} />
+              ))}
+            </div>
+          </div>
+          {footerSections.map((section) => (
+            <FooterSection
+              key={section.title}
+              title={section.title}
+              links={section.links}
+            />
+          ))}
         </div>
-        <p className="text-muted-foreground text-sm sm:text-base">
-          &copy; {new Date().getFullYear()} XO Starter by{" "}
-          <a
-            href="https://egxo.dev"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="font-medium text-[#17c9e0] underline-offset-4 hover:text-[#17c8e0da] hover:underline"
-          >
-            egxo.dev
-          </a>
-        </p>
-        <div className="hidden sm:block">
-          <GitHubIcon />
+        <div className='text-muted-foreground border-t py-6 text-center text-sm'>
+          <p>
+            &copy; {new Date().getFullYear()} XOStarter. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
