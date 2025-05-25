@@ -41,7 +41,7 @@ export default function Navbar() {
           <div className='flex items-center'>
             <Link href='/' className='flex items-center gap-2'>
               <span className='from-primary bg-gradient-to-r to-blue-500 bg-clip-text text-xl font-bold text-transparent'>
-                XOStarter
+                XO Starter
               </span>
             </Link>
           </div>

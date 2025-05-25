@@ -87,7 +87,7 @@ export default function Footer() {
             <h3 className='mb-3 text-lg font-semibold'>XOStarter</h3>
             <p className='text-muted-foreground max-w-56 text-sm'>
               A modern, feature-rich starter template for Next.js 15 with React
-              19, Tailwind 4, and more.
+              19, Tailwind CSS v4, and more.
             </p>
             <div className='mt-4 flex gap-4'>
               {socialLinks.map(({ href, Icon, label }) => (
@@ -105,7 +105,7 @@ export default function Footer() {
         </div>
         <div className='text-muted-foreground border-t py-6 text-center text-sm'>
           <p>
-            &copy; {new Date().getFullYear()} XOStarter. All rights reserved.
+            &copy; {new Date().getFullYear()} XO Starter. All rights reserved.
           </p>
         </div>
       </div>
