@@ -85,6 +85,11 @@
   }
 }
 
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
 /*! SCROLLBAR 4 FIREFOX !*/
 * {
   scrollbar-width: thin;

@@ -1,4 +1,3 @@
-import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
@@ -7,6 +6,7 @@ import { ThemeProvider } from "@/providers";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Toaster as SonnerToaster } from "@/components/ui/sonner";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,19 +32,10 @@ export const metadata: Metadata = {
   keywords: [
     "typescript",
     "javascript",
-    "next",
     "nextjs",
-    "next15",
-    "react",
     "reactjs",
-    "react19",
-    "tailwind",
     "tailwindcss",
-    "tailwindcssv4",
     "shadcnui",
-    "radixui",
-    "eslint",
-    "prettier",
     "vercel",
   ],
   // manifest: "/manifest.json",
@@ -100,6 +91,7 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang='en'>
+      <meta name='apple-mobile-web-app-title' content={SITE_DATA.title} />
       <body
         className={`${geistSans.variable} ${geistMono.variable} grid min-h-[100dvh] w-full max-w-screen grid-rows-[auto_1fr_auto] overflow-x-hidden font-sans antialiased`}
       >
