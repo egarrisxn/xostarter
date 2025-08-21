@@ -32,7 +32,7 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300",
         isScrolled
-          ? "bg-background/80 border-b backdrop-blur-md"
+          ? "border-b bg-background/80 backdrop-blur-md"
           : "bg-transparent"
       )}
     >
@@ -40,7 +40,7 @@ export default function Navbar() {
         <div className='flex h-16 items-center justify-between'>
           <div className='flex items-center'>
             <Link href='/' className='flex items-center gap-2'>
-              <span className='from-primary bg-gradient-to-r to-blue-500 bg-clip-text text-xl font-bold text-transparent'>
+              <span className='bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-xl font-bold text-transparent'>
                 XO Starter
               </span>
             </Link>
@@ -50,7 +50,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className='text-muted-foreground hover:text-foreground text-sm font-medium transition-colors'
+                className='text-sm font-medium text-muted-foreground transition-colors hover:text-foreground'
               >
                 {item.name}
               </Link>
@@ -79,16 +79,16 @@ export default function Navbar() {
       </div>
       <div
         className={cn(
-          "bg-background fixed inset-0 top-16 z-40 transform border-t transition-transform duration-300 ease-in-out md:hidden",
+          "fixed inset-0 top-16 z-40 transform border-t bg-background transition-transform duration-300 ease-in-out md:hidden",
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <div className='bg-background h-screen space-y-6 px-4 py-6'>
+        <div className='h-screen space-y-6 bg-background px-4 py-6'>
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className='text-foreground hover:text-primary block text-base font-medium'
+              className='block text-base font-medium text-foreground hover:text-primary'
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.name}

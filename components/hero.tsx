@@ -20,7 +20,7 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
           >
             <div className='mb-4 inline-block'>
-              <span className='bg-primary/10 text-primary dark:bg-primary/20 inline-flex items-center rounded-full px-3 py-1 text-sm font-medium'>
+              <span className='inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary dark:bg-primary/20'>
                 Next.js 15 + React 19 + Tailwind 4
               </span>
             </div>
@@ -31,7 +31,7 @@ export default function Hero() {
               </span>{" "}
               Starter Template
             </h1>
-            <p className='text-muted-foreground mx-auto max-w-2xl text-lg md:text-xl'>
+            <p className='mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl'>
               Jumpstart your next web project with our modern, feature-rich
               template. Built with the latest technologies for exceptional
               performance and developer experience.
@@ -66,13 +66,13 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 0.4 }}
         className='relative mx-auto mt-16 max-w-3xl'
       >
-        <div className='bg-card relative overflow-hidden rounded-lg border shadow-2xl'>
-          <div className='bg-muted/80 absolute top-0 right-0 left-0 flex items-center gap-1.5 border-b p-3 backdrop-blur-sm'>
-            <div className='bg-destructive/70 size-3 rounded-full' />
+        <div className='relative overflow-hidden rounded-lg border bg-card shadow-2xl'>
+          <div className='absolute top-0 right-0 left-0 flex items-center gap-1.5 border-b bg-muted/80 p-3 backdrop-blur-sm'>
+            <div className='size-3 rounded-full bg-destructive/70' />
             <div className='size-3 rounded-full bg-amber-400/70' />
             <div className='size-3 rounded-full bg-emerald-400/70' />
             <div className='flex flex-1 items-center justify-center'>
-              <div className='text-muted-foreground flex items-center gap-1 text-xs font-medium'>
+              <div className='flex items-center gap-1 text-xs font-medium text-muted-foreground'>
                 <Code className='size-3.5' />
                 <span>app/page.tsx</span>
               </div>

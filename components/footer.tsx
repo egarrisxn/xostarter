@@ -18,7 +18,7 @@ const SocialLink = ({
 }) => (
   <Link
     href={href}
-    className='text-muted-foreground hover:text-foreground transition-colors'
+    className='text-muted-foreground transition-colors hover:text-foreground'
     aria-label={label}
   >
     <Icon className='size-5' />
@@ -68,7 +68,7 @@ const FooterSection = ({
         <li key={label}>
           <Link
             href={href}
-            className='text-muted-foreground hover:text-foreground text-sm transition-colors'
+            className='text-sm text-muted-foreground transition-colors hover:text-foreground'
           >
             {label}
           </Link>
@@ -85,7 +85,7 @@ export default function Footer() {
         <div className='grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4'>
           <div>
             <h3 className='mb-3 text-lg font-semibold'>XOStarter</h3>
-            <p className='text-muted-foreground max-w-56 text-sm'>
+            <p className='max-w-56 text-sm text-muted-foreground'>
               A modern, feature-rich starter template for Next.js 15 with React
               19, Tailwind CSS v4, and more.
             </p>
@@ -103,7 +103,7 @@ export default function Footer() {
             />
           ))}
         </div>
-        <div className='text-muted-foreground border-t py-6 text-center text-sm'>
+        <div className='border-t py-6 text-center text-sm text-muted-foreground'>
           <p>
             &copy; {new Date().getFullYear()} XO Starter. All rights reserved.
           </p>

@@ -42,7 +42,7 @@ export default function TechStack() {
           <h2 className='mb-4 text-3xl font-bold md:text-4xl'>
             Cutting-Edge Technology Stack
           </h2>
-          <p className='text-muted-foreground text-lg'>
+          <p className='text-lg text-muted-foreground'>
             Built with the latest and most powerful tools in the web development
             ecosystem to ensure performance, reliability, and developer
             happiness.
@@ -58,7 +58,7 @@ export default function TechStack() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ y: -5 }}
-              className='bg-card rounded-xl border p-6 transition-all hover:shadow-lg'
+              className='rounded-xl border bg-card p-6 transition-all hover:shadow-lg'
             >
               <div className='flex items-start space-x-4'>
                 <div className='relative size-12 flex-shrink-0 overflow-hidden rounded-lg bg-white'>

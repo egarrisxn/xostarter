@@ -8,9 +8,9 @@ export default function CallToAction() {
   return (
     <section className='relative overflow-hidden py-24'>
       <div className='absolute inset-0 -z-10 overflow-hidden'>
-        <div className='from-background absolute top-0 right-0 left-0 h-[50%] bg-gradient-to-b to-transparent' />
+        <div className='absolute top-0 right-0 left-0 h-[50%] bg-gradient-to-b from-background to-transparent' />
         <div className='absolute top-1/2 left-1/2 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 opacity-20 blur-[120px] dark:opacity-30' />
-        <div className='from-background absolute right-0 bottom-0 left-0 h-[50%] bg-gradient-to-t to-transparent' />
+        <div className='absolute right-0 bottom-0 left-0 h-[50%] bg-gradient-to-t from-background to-transparent' />
       </div>
 
       <div className='relative z-10 container mx-auto px-4 sm:px-6 lg:px-8'>
@@ -24,7 +24,7 @@ export default function CallToAction() {
           <h2 className='mb-6 text-3xl font-bold md:text-4xl'>
             Ready to Start Building Your Next Big Idea?
           </h2>
-          <p className='text-muted-foreground mb-8 text-lg md:text-xl'>
+          <p className='mb-8 text-lg text-muted-foreground md:text-xl'>
             Get started in seconds with our pre-configured template. Focus on
             building features, not configuration.
           </p>
@@ -44,7 +44,7 @@ export default function CallToAction() {
             </a>
           </div>
 
-          <p className='text-muted-foreground mt-8 text-sm'>
+          <p className='mt-8 text-sm text-muted-foreground'>
             Already using our template? Check out the{" "}
             <span className='underline'>documentation</span> for some special
             treats.

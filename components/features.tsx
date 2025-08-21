@@ -78,7 +78,7 @@ export default function Features() {
           <h2 className='mb-4 text-3xl font-bold md:text-4xl'>
             Everything You Need to Build Faster
           </h2>
-          <p className='text-muted-foreground text-lg'>
+          <p className='text-lg text-muted-foreground'>
             Our template comes packed with features to accelerate your
             development process while maintaining code quality and user
             experience.
@@ -94,11 +94,11 @@ export default function Features() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
-              <div className='bg-card h-full rounded-xl border p-6 transition-shadow hover:shadow-md'>
+              <div className='h-full rounded-xl border bg-card p-6 transition-shadow hover:shadow-md'>
                 <div
                   className={cn(
                     "mb-4 flex size-12 items-center justify-center rounded-lg",
-                    "text-foreground bg-gradient-to-br"
+                    "bg-gradient-to-br text-foreground"
                   )}
                   style={
                     {
