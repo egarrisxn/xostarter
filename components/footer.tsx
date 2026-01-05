@@ -105,7 +105,7 @@ export default function Footer() {
         </div>
         <div className='border-t py-6 text-center text-sm text-muted-foreground'>
           <p>
-            &copy; {new Date().getFullYear()} XO Starter. All rights reserved.
+            &copy; 2026 XO Starter. All rights reserved.
           </p>
         </div>
       </div>
