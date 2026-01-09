@@ -19,7 +19,7 @@ export const SITE_DATA: {
     linkedin: string;
   };
 } = {
-  title: "XO Starter",
+  title: "XOStarter",
   description: "An easy-to-deploy Next.js 15 starter template!",
   url: SITE_URL,
   ogImage: `${SITE_URL}/opengraph-image.png`,

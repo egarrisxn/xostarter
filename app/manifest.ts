@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "XO Starter",
+    name: "XOStarter",
     short_name: "XO",
     description: "An easy-to-deploy Next.js 15 starter template!",
     id: "/",
