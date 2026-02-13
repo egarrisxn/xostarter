@@ -13,6 +13,7 @@ const eslintConfig = [
   ...compat.config({
     extends: ["next/core-web-vitals", "next/typescript", "prettier"],
     rules: {
+      "@typescript-eslint/triple-slash-reference": "off",
       "@typescript-eslint/no-explicit-any": "off",
       //! EXAMPLE OF OPTIONS FOR HERE !//
       // "@typescript-eslint/no-empty-object-type": "off",
